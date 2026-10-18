@@ -1,17 +1,21 @@
-from operator import index
+class ListNode:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
 
-nums = [2,7,11,15]
-target = 9
+class Box:
+    def __init__(self, head = None):
+        self.head = head
+
+    def contains(self, cat):
+        lastbox = self.head
+        while lastbox:
+            if cat == lastbox.val:
+                return True
+            else:
+                lastbox = lastbox.next
+            return False
 
 
 
-def twoSum(nums, target):
-    for i in nums:
-        for j in nums:
-            print(nums.index(i), nums.index(j))
-            if nums.index(i) != nums.index(j):
-                if i + j == target:
-                    return print([nums.index(i), nums.index(j)])
 
-
-twoSum(nums, target)
